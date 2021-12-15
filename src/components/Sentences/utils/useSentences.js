@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {BasketBall, FootBall, Tennis, Hokey} from '../SelectArray'
+import {BasketBall, FootBall, Tennis, Hockey} from '../SelectArray'
 
 
 const useSelect= () => {
@@ -18,7 +18,7 @@ const useSelect= () => {
                 setAskTab(Tennis)
                 break;
             case 4:
-                setAskTab(Hokey)
+                setAskTab(Hockey)
                 break;
             default:
                 break;

@@ -18,11 +18,11 @@ const Tennis = [
     {id:"4", name: "nope"},
 ]
 
-const Hokey = [
+const Hockey = [
     {id:"1", name: "auto"},
     {id:"2", name: "test"},
     {id:"3", name: "puta"},
     {id:"4", name: "nope"},
 ]
 
-export { BasketBall, FootBall, Tennis, Hokey}
+export { BasketBall, FootBall, Tennis, Hockey}
