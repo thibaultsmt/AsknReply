@@ -1,20 +1,27 @@
+import { useEffect } from 'react'
 import styled from 'styled-components'
 import Select from './Select'
+import useSelect from './utils/useSentences'
 
-const askTab = [
-    {id:"1", name: "auto"},
-    {id:"2", name: "test"},
-    {id:"3", name: "aaassrgrgrgzah"},
-    {id:"4", name: "nope"},
-]
 
-const Sentences = ({first, second, third}) => {
+const Sentences = ({id, update, first, second, third}) => {
+
+    const {askTab, choiceSelect} = useSelect(id)
+
+    useEffect(() => {
+        choiceSelect(id)
+    }, [choiceSelect, id])
+
+
     return (
         <Wrapper>
             <Sentence>
                 {first ? first : null}
                 <Select askTab={askTab}/> {second ? second : null}
-                {third ? <Select askTab={askTab}/> : null} {third ? third : null} <Ask>ask</Ask>
+                {third ? <Select askTab={askTab}/> : null} {third ? third : null}
+                <Ask onClick={() => update()}>
+                    ask
+                </Ask>
             </Sentence>
         </Wrapper>
     )

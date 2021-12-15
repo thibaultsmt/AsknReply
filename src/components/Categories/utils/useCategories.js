@@ -1,28 +1,29 @@
 import { useState } from 'react'
-import {BasketBall, FootBall, Tennis, Hokey} from '../QuestionArrays'
+import {BasketBall, FootBall, Tennis, Hockey} from '../QuestionArrays'
 
 
 const useCategories = () => {
 
     const [sportsArrays, setSportArray] = useState([])
 
-    const selectCategories = (id) => {
+    const selectCategories = (id, update) => {
+        let value = []
         switch (id) {
             case 1:
-                setSportArray(BasketBall)
-                console.log('BasketBall:', BasketBall)
+                value = BasketBall(update)
+                setSportArray(value)
                 break;
             case 2:
-                setSportArray(FootBall)
-                console.log('FootBall:', FootBall)
+                value = FootBall(update)
+                setSportArray(value)
                 break;
             case 3:
-                setSportArray(Tennis)
-                console.log('Tennis:', Tennis)
+                value = Tennis(update)
+                setSportArray(value)
                 break;
             case 4:
-                setSportArray(Hokey)
-                console.log('Hokey:', Hokey)
+                value = Hockey(update)
+                setSportArray(value)
                 break;
             default:
                 break;

@@ -1,30 +1,61 @@
 import styled from 'styled-components'
 import useCategories from './utils/useCategories'
+import Loader from '../../Assets/loader.gif'
+import { useState } from 'react'
 
 
 
 const Categorie = () => {
 
     const {sportsArrays, selectCategories} = useCategories()
+    const [replyAction, setReplyAction] = useState(false)
+    const [res, setRes] = useState(false)
+
+
+    const update = () => {
+        setReplyAction(true)
+        setTimeout(() => {
+            setReplyAction(false)
+            setRes(true)
+        }, 2000)
+    }
+
+    const reset = () => {
+        setReplyAction(false)
+        setRes(false)
+    }
 
     return (
         <>
             <CategoriesWrapper>
-                <Categories onClick={() => selectCategories(1)}>BasketBall</Categories>
-                <Categories onClick={() => selectCategories(2)}>FootBall</Categories>
-                <Categories onClick={() => selectCategories(3)}>Tennis</Categories>
-                <Categories onClick={() => selectCategories(4)}>Hokey</Categories>
+                <Categories onClick={() => {
+                    reset()
+                    selectCategories(1, update)}
+                }>BasketBall</Categories>
+                <Categories onClick={() => {
+                    reset()
+                    selectCategories(2, update)}
+                }>FootBall</Categories>
+                <Categories onClick={() => {
+                    reset()
+                    selectCategories(3, update)}
+                }>Tennis</Categories>
+                <Categories onClick={() => {
+                    reset()
+                    selectCategories(4, update)}
+            }>Hockey</Categories>
             </CategoriesWrapper>
-            {sportsArrays.length > 0 ?
-            <AsknReplyWarpper>
-                <QuestionsWarpper>
-                    {sportsArrays.map((q, idx) => <div key={idx}>{q}</div>)}
-                </QuestionsWarpper>
-                <AnswerWarpper>
+            {sportsArrays.length > 0 ? <AsknReplyWarpper>
+                {sportsArrays.length > 0  && replyAction === false && res === false ?
+                    <QuestionsWarpper>
+                        {sportsArrays.map((q, idx) => <div key={idx}>{q}</div>)}
+                    </QuestionsWarpper>
+                : sportsArrays.length > 0  && replyAction ? <img src={Loader} alt='loading...'/>
+                : res ? <AnswerWarpper>
                     Reply:
-                </AnswerWarpper>
-            </AsknReplyWarpper>
-            : null}
+                </AnswerWarpper> : null
+                }
+            </AsknReplyWarpper> : null}
         </>
     )
 }

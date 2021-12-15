@@ -5,8 +5,8 @@ import Categorie from './components/Categories/Categories';
 function App() {
   return (
       <Wrapper>
-        <Header title="Sports AsknReply app" />
-        <Categorie/>
+          <Header title="Sports AsknReply app" />
+          <Categorie/>
       </Wrapper>
   );
 }
