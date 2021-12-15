@@ -51,9 +51,10 @@ const Categorie = () => {
                         {sportsArrays.map((q, idx) => <div key={idx}>{q}</div>)}
                     </QuestionsWarpper>
                 : sportsArrays.length > 0  && replyAction ? <img src={Loader} alt='loading...'/>
-                : res ? <AnswerWarpper>
-                    Reply:
-                </AnswerWarpper> : null
+                : res ?
+                    <AnswerWarpper>
+                        <h1>Reply:</h1>
+                    </AnswerWarpper> : null
                 }
             </AsknReplyWarpper> : null}
         </>
@@ -96,13 +97,19 @@ const QuestionsWarpper = styled.div`
 `;
 
 const AnswerWarpper = styled.div`
-    width: 20%;
+    width: 40%;
+    padding: 1.5em;
     border: solid 3px palevioletred;
     border-radius: 20px;
     align-self: center;
-    margin-left: 8em;
-    height: 40%;
-    background-color: white;
+    height: 50%;
+    color: white;
+    background-color: transparent;
+
+    h1 {
+        margin: 0px 0px 2em 0px;
+        font-size: 1.5em;
+    }
 `;
 
 export default Categorie
