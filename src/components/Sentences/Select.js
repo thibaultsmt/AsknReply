@@ -1,15 +1,26 @@
 import styled from 'styled-components'
 
-const Select = ({askTab}) => {
+const Select = ({askTab, addParams}) => {
+
+
+
     return (
-        <Selector>
-            {askTab.map(ask => <option value={ask.id} key={ask.id}>{ask.name}</option>)}
+        <Selector onChange={(e) => addParams(e.target.value) }>
+            <option selected disabled hidden>select</option>
+            {askTab?.map(ask =>
+                <option
+                    value={ask.value}
+                    key={ask.value}
+                >
+                    {ask.name}
+                </option>
+            )}
         </Selector>
     )
 }
 
 const Selector = styled.select`
-max-width: 3.5em;
+max-width: 4.1em;
 height: 35px;
 background: transparent;
 color: palevioletred;

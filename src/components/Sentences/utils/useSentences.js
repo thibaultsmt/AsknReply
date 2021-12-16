@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import {BasketBall, FootBall, Tennis, Hockey} from '../SelectArray'
+import {BasketBall, FootBall, HandBall, Hockey} from '../SelectArray'
 
 
 const useSelect= () => {
 
     const [askTab, setAskTab] = useState([])
+    const [paramsQuery1, setParamsQuery1] = useState('')
+    const [paramsQuery2, setParamsQuery2] = useState('')
 
     const choiceSelect = (id) => {
         switch (id) {
@@ -15,7 +17,7 @@ const useSelect= () => {
                 setAskTab(FootBall)
                 break;
             case 3:
-                setAskTab(Tennis)
+                setAskTab(HandBall)
                 break;
             case 4:
                 setAskTab(Hockey)
@@ -25,7 +27,22 @@ const useSelect= () => {
         }
     }
 
-    return {askTab, choiceSelect}
+    const addParams1 = (newValue) => {
+        console.log(newValue)
+        setParamsQuery1(newValue)
+    }
+
+    const addParams2 = (newValue) => {
+        console.log(newValue)
+        setParamsQuery2(newValue)
+    }
+
+    return {
+        askTab,
+        choiceSelect,
+        paramsQuery: [paramsQuery1, paramsQuery2],
+        addParams: [addParams1, addParams2]
+    }
 }
 
 

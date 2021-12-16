@@ -1,29 +1,19 @@
 import styled from 'styled-components'
 import useCategories from './utils/useCategories'
 import Loader from '../../Assets/loader.gif'
-import { useState } from 'react'
 
 
 
 const Categorie = () => {
 
-    const {sportsArrays, selectCategories} = useCategories()
-    const [replyAction, setReplyAction] = useState(false)
-    const [res, setRes] = useState(false)
-
-
-    const update = () => {
-        setReplyAction(true)
-        setTimeout(() => {
-            setReplyAction(false)
-            setRes(true)
-        }, 2000)
-    }
-
-    const reset = () => {
-        setReplyAction(false)
-        setRes(false)
-    }
+    const {
+        sportsArrays,
+        selectCategories,
+        replyAction,
+        res,
+        reset,
+        update
+    } = useCategories()
 
     return (
         <>
@@ -39,7 +29,7 @@ const Categorie = () => {
                 <Categories onClick={() => {
                     reset()
                     selectCategories(3, update)}
-                }>Tennis</Categories>
+                }>HandBall</Categories>
                 <Categories onClick={() => {
                     reset()
                     selectCategories(4, update)}
