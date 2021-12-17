@@ -9,7 +9,7 @@
 // Wikidata
 export const COUNTRY = (op) => `SELECT ?countryLabel
 WHERE {
-  ${op[0]} wdt:P1532 ?country.
+  ${op[0]} wdt:P27 ?country.
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en".}
 } `;
 

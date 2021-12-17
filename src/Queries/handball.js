@@ -23,12 +23,11 @@
 // Position Club
 // dbpedia
 export const POSITION = (op) => `PREFIX db: <http://dbpedia.org/resource/>
-    SELECT DISTINCT ?name
-    WHERE{
-        ?person a dbo:HandballPlayer.
-        ?person dbp:position ${op[0]}.
-        ?person dbp:clubs ${op[1]}.
-        ?person foaf:name ?name.
+SELECT DISTINCT (count(?person) as ?nbPerson)
+WHERE{
+?person a dbo:HandballPlayer.
+?person dbp:position ${op[0]}.
+?person dbp:clubs ${op[1]}.
 }`;
 
 

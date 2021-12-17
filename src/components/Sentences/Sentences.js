@@ -4,7 +4,7 @@ import Select from './Select'
 import useSelect from './utils/useSentences'
 
 
-const Sentences = ({id, update, first, second, third, query, choice, endpoint}) => {
+const Sentences = ({id, idval, update, first, second, third, query, choice, endpoint}) => {
 
     const {askTab, choiceSelect, addParams, paramsQuery} = useSelect(id)
 
@@ -20,10 +20,10 @@ const Sentences = ({id, update, first, second, third, query, choice, endpoint}) 
                 <Select askTab={askTab.find(e => e)?.[choice[0]]} addParams={addParams[0]}/> {second ? second : null}
                 {third ? <Select askTab={askTab.find(e => e)?.[choice[1]]} addParams={addParams[1]}/> : null} {third ? third : null}
                 {paramsQuery[0].length > 0  && paramsQuery[1].length > 0?
-                <Ask onClick={() => update(query(paramsQuery), endpoint)}>
+                <Ask onClick={() => update(query(paramsQuery), endpoint, idval)}>
                     ask
                 </Ask> : paramsQuery[0].length > 0 && !third?
-                <Ask onClick={() => update(query(paramsQuery), endpoint)}>
+                <Ask onClick={() => update(query(paramsQuery), endpoint, idval)}>
                     ask
                 </Ask>  : null }
             </Sentence>

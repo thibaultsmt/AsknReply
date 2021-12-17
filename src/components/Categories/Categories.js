@@ -12,6 +12,7 @@ const Categorie = () => {
         replyAction,
         res,
         reset,
+        response,
         update
     } = useCategories()
 
@@ -44,6 +45,9 @@ const Categorie = () => {
                 : res ?
                     <AnswerWarpper>
                         <h1>Reply:</h1>
+                        <Display>
+                            {response? response : null}
+                        </Display>
                     </AnswerWarpper> : null
                 }
             </AsknReplyWarpper> : null}
@@ -97,9 +101,15 @@ const AnswerWarpper = styled.div`
     background-color: transparent;
 
     h1 {
-        margin: 0px 0px 2em 0px;
+        margin: 0px 0px 3.5em 0px;
         font-size: 1.5em;
     }
 `;
+
+
+const Display = styled.p`
+    font-size: 2.5em;
+`;
+
 
 export default Categorie

@@ -20,12 +20,12 @@
 
 
 // How many players already played for ${op[0]} and ${op[1]}  ?
-// Club
+// Club Club
 // Wikidata
 export const BOTHCLUB = (op) => `
     SELECT (count(?player) as ?nbPlayer) {
-        ?player wdt:P54 wd:Q503739.
-        ?player wdt:P54 wd:Q1422772.
+        ?player wdt:P54 ${op[0]}.
+        ?player wdt:P54 ${op[1]}.
 }`;
 
 

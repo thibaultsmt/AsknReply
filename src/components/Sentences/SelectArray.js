@@ -15,7 +15,7 @@ const BasketBall = [{
         {value:"dbr:Los_Angeles_Lakers", name: "Los Angeles Lakers"},
         {value:"dbr:Chicago_Bulls", name: "Chicago Bulls"},
         {value:"dbr:San_Antonio_Spurs", name: "San Antonio Spurs"},
-        {value:"dbr:Toronto_Raptors.", name: "Toronto Raptors"}
+        {value:"dbr:Toronto_Raptors", name: "Toronto Raptors"}
     ],
 
     Year: [
@@ -28,7 +28,7 @@ const BasketBall = [{
 
 const FootBall = [{
     Players: [
-        {value:"wd:Q21621995", name: "Kylian Mbaclé"},
+        {value:"wd:Q21621995", name: "Kylian Mbappe"},
         {value:"wd:Q11571", name: "Cristiano Ronaldo"},
         {value:"wd:Q615", name: "Lionel Messi"},
         {value:"wd:Q46896", name: "Zlatan Ibrahimović"}
