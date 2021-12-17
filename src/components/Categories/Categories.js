@@ -101,7 +101,7 @@ const AnswerWarpper = styled.div`
     background-color: transparent;
 
     h1 {
-        margin: 0px 0px 3.5em 0px;
+        margin: 0px 0px 0.5em 0px;
         font-size: 1.5em;
     }
 `;
