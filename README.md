@@ -1,6 +1,6 @@
 ## Pre-requisites
 
-Install if you did not have on your computer:
+Need to install if you did not have on your computer:
 ### `Node js`
 
 Install node js here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
@@ -9,7 +9,8 @@ Install node js here: [https://nodejs.org/en/download/](https://nodejs.org/en/do
 Install yarn on your computer by running this command on your terminal: [https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 ## Available Scripts
 
-In the project directory, first you need to generate the node_modules folder with the command `yarn or yarn install` then you can run:
+In the project directory, first you need to generate the `node_modules` folder with the command\
+`yarn or yarn install` then you can run:
 ### `yarn start`
 
 Runs the app in the development mode.\
